@@ -2,7 +2,7 @@ const form = document.querySelector('form');
 const searchQuery = document.querySelector('#query');
 const imgList = document.querySelector('#images');
 const baseUrl = 'https://api.unsplash.com/search/photos';
-const key = '';
+const key = '2vxPCj7GdSPSB7glv43N0IN9uiZ6Bp53Ht5wqaKiBPI';
 let page = 1;
 
 form.addEventListener('submit', e => {
@@ -27,9 +27,26 @@ async function getImages(query) {
 
 //skriva funktionen för att rendera ut vår respons till gränssnittet
 let renderImages = (images) => {
+
+    imgList.innerHTML = '';
+
     images.forEach(image => {
         const imgListItem = document.createElement('li');
+
+        imgListItem.addEventListener('click', () => {
+            showImage(image.urls.regular, image.alt_description);
+        })
+
         imgListItem.innerHTML = `<img src="${image.urls.thumb}" alt="${image.alt_description}">`
         imgList.appendChild(imgListItem);
     })
+}
+
+//hantera när användaren klickar på en bild -> lightbox
+
+let showImage = (imageUrl, description) => {
+    console.log(imageUrl);
+    let overlay = document.querySelector('#overlay');
+    overlay.innerHTML = `<img src="${imageUrl}" alt="${description}">`
+    overlay.classList.toggle('hide');
 }

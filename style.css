@@ -1,0 +1,21 @@
+#images {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#overlay {
+    display: block;
+    height: 100vh;
+    background-color: rgba(46, 43, 43, 0.658);
+    width: 100vw;
+}
+
+.hide {
+    display: none !important;
+}
