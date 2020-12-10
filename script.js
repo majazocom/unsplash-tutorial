@@ -2,7 +2,7 @@ const form = document.querySelector('form');
 const searchQuery = document.querySelector('#query');
 const imgList = document.querySelector('#images');
 const baseUrl = 'https://api.unsplash.com/search/photos';
-const key = '2vxPCj7GdSPSB7glv43N0IN9uiZ6Bp53Ht5wqaKiBPI';
+const key = '';
 let page = 1;
 
 form.addEventListener('submit', e => {
